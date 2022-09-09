@@ -8,7 +8,7 @@
 </head>
 <body>
    <main>
-      <h2>--> Trains here <--</h2>
+      @yield('main-content')
    </main>
 </body>
 </html>
