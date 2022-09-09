@@ -1,5 +1,6 @@
 <?php
 
+use App\Train;
 use Illuminate\Database\Seeder;
 
 class TrainsTableSeeder extends Seeder
@@ -46,5 +47,19 @@ class TrainsTableSeeder extends Seeder
                 'canceled' => false,
             ]
         ];
+
+        foreach ($trains as $train) {
+            $newTrain = new Train();
+            $newTrain->company = $train['company'];
+            $newTrain->departure_station = $train['departure_station'];
+            $newTrain->arrival_station = $train['arrival_station'];
+            $newTrain->departure_time = $train['departure_time'];
+            $newTrain->arrival_time = $train['arrival_time'];
+            $newTrain->train_code = $train['train_code'];
+            $newTrain->carriages = $train['carriages'];
+            $newTrain->in_time = $train['in_time'];
+            $newTrain->canceled = $train['canceled'];
+            $newTrain->save();
+        }
     }
 }
